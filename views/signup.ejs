@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Reminder App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="/css/auth.css" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <i class="material-icons">person_add</i>
+                <h4>Create Account</h4>
+                <p>Join us and start managing your reminders</p>
+            </div>
+
+            <% if(typeof errors != 'undefined') { %>
+                <% errors.forEach(function(error) { %>
+                    <div class="error-message">
+                        <i class="material-icons">error_outline</i>
+                        <%= error.msg %>
+                    </div>
+                <% }); %>
+            <% } %>
+
+            <form action="/auth/signup" method="POST" class="auth-form">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="name" name="name" value="<%= typeof name != 'undefined' ? name : '' %>" required>
+                    <label for="name">Full Name</label>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input type="password" id="password2" name="password2" required>
+                    <label for="password2">Confirm Password</label>
+                </div>
+
+                <button type="submit" class="btn waves-effect waves-light signup-btn">
+                    Sign Up <i class="material-icons right">person_add</i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="/auth/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html> 

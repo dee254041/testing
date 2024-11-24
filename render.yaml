@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: reminder-app
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ZETTATEL_API_URL
+        value: https://portal.zettatel.com/SMSApi/send
+      - key: ZETTATEL_USERNAME
+        sync: false
+      - key: ZETTATEL_PASSWORD
+        sync: false
+      - key: SENDER_ID
+        sync: false 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Reminder App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/auth.css" rel="stylesheet">
+    <style>
+        .offline-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .offline-icon {
+            font-size: 4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="offline-container">
+                <i class="material-icons offline-icon">cloud_off</i>
+                <h4>You're Offline</h4>
+                <p>Please check your internet connection and try again.</p>
+                <button onclick="window.location.reload()" class="btn waves-effect waves-light">
+                    Retry <i class="material-icons right">refresh</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
